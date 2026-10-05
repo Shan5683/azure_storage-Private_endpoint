@@ -41,19 +41,19 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform init
-        working-directory: ./terraform/modules
+        working-directory: ./terraform/module
         run: terraform init
 
       - name: Terraform validate
-        working-directory: ./terraform/modules
+        working-directory: ./terraform/module
         run: terraform validate
 
       - name: Terraform plan
-        working-directory: ./terraform/modules
+        working-directory: ./terraform/module
         run: terraform plan -out=tfplan
 
       - name: Terraform apply
-        working-directory: ./terraform/modules
+        working-directory: ./terraform/module
         run: terraform apply -auto-approve tfplan
 
 

@@ -1,0 +1,48 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# Terraform plan files
+*.tfplan
+*.tfplan.*
+
+# Variable files containing secrets
+*.tfvars
+*.tfvars.json
+
+# Exception: keep example variable file
+!terraform.tfvars.example
+
+# Terraform lock file
+# Keep this file committed for provider version consistency
+# .terraform.lock.hcl
+
+# Secrets / credentials
+*.pem
+*.key
+*.pfx
+*.crt
+*.cer
+*.env
+.env
+.env.*
+
+# Azure / CLI local files
+.azure/
+
+# VS Code
+.vscode/
+
+# IntelliJ / JetBrains
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

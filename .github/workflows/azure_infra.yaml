@@ -28,6 +28,12 @@ jobs:
     env:
       TF_ENV: ${{ inputs.environment }}
     steps:
+      - name: Test runner
+        run: |
+          echo "Runner is working"
+          uname -a
+          echo "Hello GitHub Actions"
+          
       - name: Checkout code
         uses: actions/checkout@v5
       - name: Show environment

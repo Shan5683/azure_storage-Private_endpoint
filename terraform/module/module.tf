@@ -12,14 +12,16 @@ module "stg" {
 }
 
 module "container" {
+  depends_on = [module.stg]
   source = "../environment/dev/azurerm_storage_container"
 
   containers = {
-    container1 = {
-      name                  = "tfstate"
-      storage_account_id    = module.stg.storage_account_id["stg1"]
-      container_access_type = "private"
-    }
+    for key, value in var.stg_containers : key => merge(
+      value,
+      {
+        storage_account_id = module.stg.storage_account_id[value.storage_account_key]
+      }
+    )
   }
 }
 
